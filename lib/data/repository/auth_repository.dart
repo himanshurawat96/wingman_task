@@ -1,8 +1,5 @@
 import 'dart:convert';
-import 'dart:io';
-import 'package:dio/dio.dart';
 import 'package:wingman_task/data/model/OTPResponse.dart';
-import 'package:wingman_task/data/model/Product.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wingman_task/data/model/api_response.dart';
 

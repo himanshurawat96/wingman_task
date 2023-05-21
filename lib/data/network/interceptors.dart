@@ -16,14 +16,10 @@ class AppInterceptors extends Interceptor {
     }
 
     if (options.headers.containsKey("token")) {
-      // print('asking token');
-      //remove the auxiliary header
+
       options.headers.remove("token");
       var token =  prefs.get("token");
-      // debugPrint("token $token");
-      // var token = "eyJpdiI6InJOMTRMaFdXWkVUWmdlOUp6ZU9jemc9PSIsInZhbHVlIjoic1VvOERoeFNUWUFVbGRBYys2Y2VwY0xMQ29vTUR4bGFIM3dsaEJleDhTcjdJU014MmlOS2Z4aWlhdVZ3ZURSL20rRU1sdDJhNDYrUytyWk9CRGxvbWc9PSIsIm1hYyI6ImE2MzQ2OGZmY2JkZjZmMTRkNzc2ZWE0YTQ2MzBhZDkzMWZiZWQ4YWZkM2VhNjU0YzE3NDQ5OGZmNTM5MGY4ODEiLCJ0YWciOiIifQ==";
 
-      // options.headers.addAll({"token": "$header"});
       options.headers["Token"] = "$token";
       return handler.next(options);
     }
