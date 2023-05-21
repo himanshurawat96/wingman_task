@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:wingman_task/bloc/auth_bloc.dart';
 import 'package:wingman_task/data/repository/auth_repository.dart';
 import 'package:wingman_task/ui/auth/register_page.dart';
+import 'package:wingman_task/ui/auth/widgets/bg_container.dart';
 import 'package:wingman_task/ui/home/home_page.dart';
 import 'package:wingman_task/ui/widget/app_button.dart';
 import 'package:wingman_task/ui/widget/app_text_field.dart';
@@ -228,31 +229,7 @@ class _LoginPageState extends State<LoginPage> {
             if(ResponsiveWidget.isSmallScreen(context)) {
               return child;
             }
-            return Container(
-              color: K.themeColorPrimary,
-              padding: const EdgeInsets.symmetric(
-                horizontal: 100,
-                vertical: 50,
-              ),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.5),
-                      offset: const Offset(0,10),
-                      blurRadius: 15,
-                      spreadRadius: -10
-                    )
-                  ]
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: child,
-                ),
-              ),
-            );
+            return WebBGContainer(child: child);
           }
         ),
       ),

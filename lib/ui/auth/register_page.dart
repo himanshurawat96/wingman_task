@@ -12,6 +12,8 @@ import 'package:wingman_task/ui/widget/responsive_widget.dart';
 import 'package:wingman_task/utils/constants.dart';
 import 'package:wingman_task/utils/image_icons.dart';
 
+import 'widgets/bg_container.dart';
+
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
 
@@ -157,31 +159,7 @@ class _RegisterPageState extends State<RegisterPage> {
               if(ResponsiveWidget.isSmallScreen(context)) {
                 return child;
               }
-              return Container(
-                color: K.themeColorPrimary,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 100,
-                  vertical: 50,
-                ),
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.black.withOpacity(0.5),
-                            offset: const Offset(0,10),
-                            blurRadius: 15,
-                            spreadRadius: -10
-                        )
-                      ]
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(15),
-                    child: child,
-                  ),
-                ),
-              );
+              return WebBGContainer(child: child);
             }
         ),
       ),

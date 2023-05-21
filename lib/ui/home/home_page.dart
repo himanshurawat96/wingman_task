@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 import 'package:wingman_task/ui/home/widgets/bar_action.dart';
+import 'package:wingman_task/ui/home/widgets/custom_listtile.dart';
 import 'package:wingman_task/utils/constants.dart';
 
 class HomePage extends StatefulWidget {
@@ -246,43 +247,7 @@ class _HomePageState extends State<HomePage> {
                     physics: const ScrollPhysics(),
                     itemCount: 10,
                     itemBuilder: (context, index) {
-                      return Row(
-                        children: [
-                          CircleAvatar(
-                            radius: 25,
-                            backgroundColor: Colors.indigo.withOpacity(0.2),
-                            child: const Icon(PhosphorIcons.house_bold, color: Colors.indigo,),
-                          ),
-                          const SizedBox(width: 15),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text("Home", style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                ),),
-                                Text("25 Sept 2022", style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                ),),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(width: 20),
-                          Row(
-                            children: const [
-                              Text('AED 550', style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w500,
-                              ),),
-                              const SizedBox(width: 10),
-                              Icon(PhosphorIcons.arrow_up_right_bold, color: Colors.red,)
-                            ],
-                          )
-                        ],
-                      );
+                      return const CustomListTile();
                     },
                     separatorBuilder: (context, index) => const SizedBox(height: 20),
                   )
